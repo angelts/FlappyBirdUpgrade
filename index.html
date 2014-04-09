@@ -1,154 +1,102 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Flappybirdupgrade : upgrade of main.js (Flappy Bird) from Phaser 1.1.3 to Phaser 2.0.2" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Flappybirdupgrade</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/angelts/FlappyBirdUpgrade">View on GitHub</a>
-
-          <h1 id="project_title">Flappybirdupgrade</h1>
-          <h2 id="project_tagline">upgrade of main.js (Flappy Bird) from Phaser 1.1.3 to Phaser 2.0.2</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/angelts/FlappyBirdUpgrade/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/angelts/FlappyBirdUpgrade/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>`function create() {
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-    ...
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):<br>
-    clouds.enableBody = true;
-    ...
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):<br>
-    fingers.enableBody = true;
-    ...
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):<br>
-    invs.enableBody = true;
-    ...
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):<br>
-    game.physics.arcade.enable(birdie);
-    ...
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):<br>
-    game.physics.setBoundsToWorld();
-    ...
+function create() {
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+	...
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):	
+	clouds.enableBody = true;
+	...
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):	
+	fingers.enableBody = true;
+	...
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):	
+	invs.enableBody = true;
+	...
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):	
+	game.physics.arcade.enable(birdie);
+	...
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):	
+	game.physics.setBoundsToWorld();
+	...
     // Start clouds timer
-    //Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-    //cloudsTimer = new Phaser.Timer(game);
-    //cloudsTimer.onEvent.add(spawnCloud);
-    //cloudsTimer.start();
-    //cloudsTimer.add(Math.random());
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-    game.time.events.add(1000 * Math.floor((Math.random()*1)+1), spawnCloud);
-    ...
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//cloudsTimer = new Phaser.Timer(game);
+	//cloudsTimer.onEvent.add(spawnCloud);
+	//cloudsTimer.start();
+	//cloudsTimer.add(Math.random());
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	game.time.events.add(1000 * Math.floor((Math.random()*1)+1), spawnCloud);
+	...
 }
 function start() {
-    ...
+	...
     // SPAWN FINGERS!
-    //Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-    //fingersTimer = new Phaser.Timer(game);
-    //fingersTimer.onEvent.add(spawnFingers);
-    //fingersTimer.start();
-    //fingersTimer.add(2);
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-    game.time.events.add(1000, spawnFingers);
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//fingersTimer = new Phaser.Timer(game);
+	//fingersTimer.onEvent.add(spawnFingers);
+	//fingersTimer.start();
+	//fingersTimer.add(2);
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	game.time.events.add(1000, spawnFingers);
 }
 function spawnCloud() {
-    //Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-    //cloudsTimer.stop();
-    ...
-    //Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-    //cloudsTimer.start();
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//cloudsTimer.stop();
+	...
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//cloudsTimer.start();
     //cloudsTimer.add(4 * Math.random());
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-    game.time.events.add(1000 * Math.floor((Math.random()*20)+1), spawnCloud);
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	game.time.events.add(1000 * Math.floor((Math.random()*20)+1), spawnCloud);
 }
 function spawnFingers() {
-    //Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-    if ( gameOver )
-        return false;</p>
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	if ( gameOver )
+		return false;
 
-<pre><code>//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-//fingersTimer.stop();
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//fingersTimer.stop();
 
-//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-//var fingerY = ((game.height - 16 - o() / 2) / 2) + (Math.random() &gt; 0.5 ? -1 : 1) * Math.random() * game.height / 6;
-//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-var fingerY = (((game.world.height) - 16 - o() / 2) / 2) + (Math.random() &gt; 0.5 ? -1 : 1) * Math.random() * game.world.height / 6;
-...
-//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-//inv.width = 2;
-//inv.height = game.world.height;
-//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-inv.body.width = 2;
-inv.body.height = game.world.height;
-...
-//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-//fingersTimer.start();
-//fingersTimer.add(1 / SPAWN_RATE);
-//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
-game.time.events.add(1000 * SPAWN_RATE, spawnFingers);
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//var fingerY = ((game.height - 16 - o() / 2) / 2) + (Math.random() > 0.5 ? -1 : 1) * Math.random() * game.height / 6;
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	var fingerY = (((game.world.height) - 16 - o() / 2) / 2) + (Math.random() > 0.5 ? -1 : 1) * Math.random() * game.world.height / 6;
+	...
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+    //inv.width = 2;
+    //inv.height = game.world.height;
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+    inv.body.width = 2;
+    inv.body.height = game.world.height;
+	...
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//fingersTimer.start();
+	//fingersTimer.add(1 / SPAWN_RATE);
+	//Only for Phaser 2.0.2 (not need for Phaser 1.1.3):
+	game.time.events.add(1000 * SPAWN_RATE, spawnFingers);
 
-return true;
-</code></pre>
-
-<p>}
+	return true;
+}
 function setGameOver() {
-    ...
+	...
     // Stop spawning fingers
-    //Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-    //fingersTimer.stop();
-    ...
-}</p>
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+	//fingersTimer.stop();
+	...
+}
 
-<p>function update() {
+function update() {
     if (gameStarted) {
         ...
         // Update finger timer
-        //Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-        //fingersTimer.update();</p>
+		//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+		//fingersTimer.update();
 
-<pre><code>} else {
-   ...
+    } else {
+       ...
+    }
+	...
+    // Update clouds timer
+	//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
+    //cloudsTimer.update();
+	...
 }
-...
-// Update clouds timer
-//Only for Phaser 1.1.3 (not need for Phaser 2.0.2):
-//cloudsTimer.update();
-...
-</code></pre>
-
-<p>}`</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Flappybirdupgrade maintained by <a href="https://github.com/angelts">angelts</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
